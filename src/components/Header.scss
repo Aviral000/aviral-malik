@@ -1,0 +1,118 @@
+@import url('https://fonts.googleapis.com/css2?family=Briem+Hand:wght@100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Sedan+SC&display=swap');
+
+$fontWeight: 100;
+$baseColor: rgb(255, 255, 255);
+$baseColor2: rgb(255, 255, 255, .8);
+$baseColor3: rgb(255, 255, 255, .5);
+
+@mixin briem-font {
+    font-family: "Briem Hand", cursive;
+    font-optical-sizing: auto;
+    font-style: normal;
+}
+
+@mixin sedan-font {
+    font-family: "Sedan SC", serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+}
+
+.header-container {
+    height: 5rem;
+    position: relative;
+    top: -20rem;
+    animation: container 2s forwards 0s;
+    animation-iteration-count: 1;
+
+    .navbar {
+        display: flex;
+        align-items: center;
+
+        .logo img {
+            width: 7rem;
+            object-fit: cover;
+        }
+
+        .name {
+            @include briem-font;
+            font-weight: $fontWeight + 400;
+            color: $baseColor;
+            font-size: 2rem;
+            padding-right: 18rem;
+        }
+
+        .experience {
+            @include sedan-font;
+            font-weight: $fontWeight + 300;
+            color: $baseColor2;
+            font-size: 1.5rem;
+            padding-left: 18rem;
+            transition: transform .5s ease;
+        }
+
+        .experience:hover {
+            transform: scale(1.1);
+        }
+
+        .projects {
+            @include sedan-font;
+            font-weight: $fontWeight + 300;
+            color: $baseColor2;
+            font-size: 1.5rem;
+            padding-left: 2.5rem;
+            transition: transform .5s ease;
+        }
+
+        .projects:hover {
+            transform: scale(1.1);
+        }
+
+        .skills {
+            @include sedan-font;
+            font-weight: $fontWeight + 300;
+            color: $baseColor2;
+            font-size: 1.5rem;
+            padding-left: 2.5rem;
+            transition: transform .5s ease;
+        }
+
+        .skills:hover {
+            transform: scale(1.1);
+        }
+
+        .about {
+            @include sedan-font;
+            font-weight: $fontWeight + 300;
+            color: $baseColor2;
+            font-size: 1.5rem;
+            padding-left: 2.5rem;
+            transition: transform .5s ease;
+        }
+
+        .about:hover {
+            transform: scale(1.1);
+        }
+
+        .contacts {
+            @include sedan-font;
+            font-weight: $fontWeight + 300;
+            color: $baseColor2;
+            font-size: 1.5rem;
+            padding-left: 2.5rem;
+            transition: transform .5s ease;
+        }
+
+        .contacts:hover {
+            transform: scale(1.1);
+        }
+    }
+}
+
+@keyframes container {
+    0% {
+        top: -20rem;
+    } 100% {
+        top: 0rem;
+    }
+}
