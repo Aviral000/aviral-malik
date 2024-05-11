@@ -19,11 +19,11 @@ $baseColor3: rgb(255, 255, 255, .5);
 }
 
 @mixin keyframes($name, $from, $to) {
-    @keyframes #{$name} {
-      0% { @each $prop, $value in $from { #{$prop}: #{$value}; } }
-      100% { @each $prop, $value in $to { #{$prop}: #{$value}; } }
-    }
+  @keyframes #{$name} {
+    0% { @each $prop, $value in $from { #{$prop}: #{$value}; } }
+    100% { @each $prop, $value in $to { #{$prop}: #{$value}; } }
   }
+}
 
 .hero-section {
   margin-top: 3rem;
@@ -41,11 +41,11 @@ $baseColor3: rgb(255, 255, 255, .5);
       object-fit: cover;
     }
 
-    @for $i from 1 through 6 {
+    @for $i from 6 through 1 {
       .img#{$i} {
         position: relative;
-        top: -60rem;
-        animation: img#{$i} 3s forwards 1s + 0.25s * ($i - 1) 1;
+        left: -100rem + ($i * 2);
+        animation: img#{$i} 1s forwards 6s - ($i - 1) 1;
       }
     }
   }
@@ -69,19 +69,19 @@ $baseColor3: rgb(255, 255, 255, .5);
     .first {
       left: -40rem;
       animation-name: first;
-      animation-delay: 3s;
+      animation-delay: 4s;
     }
 
     .last {
       left: 80rem;
       animation-name: last;
-      animation-delay: 3s;
+      animation-delay: 4s;
     }
   }
 }
 
 @include keyframes(first, (left: -40rem), (left: 15rem));
 @include keyframes(last, (left: 80rem), (left: 20rem));
-@for $i from 1 through 6 {
-  @include keyframes(img#{$i}, (top: -60rem), (top: 0rem));
+@for $i from 6 through 1 {
+  @include keyframes(img#{$i}, (left: -100rem + ($i * 2)), (left: 0rem));
 }
