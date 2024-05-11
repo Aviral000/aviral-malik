@@ -1,0 +1,66 @@
+@import url('https://fonts.googleapis.com/css2?family=Briem+Hand:wght@100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Sedan+SC&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap');
+
+$fontWeight: 100;
+$baseColor: rgb(255, 255, 255);
+$baseColor2: rgb(255, 255, 255, .8);
+$baseColor3: rgb(255, 255, 255, .5);
+
+@mixin briem-font {
+  font-family: "Briem Hand", cursive;
+  font-optical-sizing: auto;
+  font-style: normal;
+}
+
+@mixin sedan-font {
+  font-family: "Sedan SC", serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+}
+
+@mixin noto-font {
+    font-family: "Noto Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+}
+
+.about-me {
+    margin-top: 10rem;
+    padding-left: 10rem;
+    padding-right: 10rem;
+
+    .para {
+        @include noto-font;
+        color: $baseColor2;
+        font-weight: 300;
+        font-size: 1.8rem;
+
+        ol {
+            list-style-type: none;
+            counter-reset: my-counter;
+        }
+
+        ol li {
+            padding-bottom: 3rem;
+            display: flex;
+        }
+        
+        ol li::before {
+            content: "\2022";
+            color: #ffffff;
+            font-size: 1.2em;
+            margin-right: 10px;
+            counter-increment: my-counter;
+        }
+
+        ol li {
+            img {
+                height: 50vh;
+                width: 25vw;
+                object-fit: cover;
+                border-radius: 10px;
+            }
+        }
+    }
+}

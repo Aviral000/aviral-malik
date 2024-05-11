@@ -39,6 +39,15 @@ $baseColor3: rgb(255, 255, 255, .5);
       width: 12vw;
       height: 60vh;
       object-fit: cover;
+      transition: width 1s ease-out;
+      transition: height 1s ease-out;
+    }
+
+    img:hover {
+      width: 25vw;
+      height: 70vh;
+      cursor: pointer;
+      object-fit: cover;
     }
 
     @for $i from 6 through 1 {
@@ -78,10 +87,35 @@ $baseColor3: rgb(255, 255, 255, .5);
       animation-delay: 4s;
     }
   }
+
+  .small-info {
+    display: flex;
+    margin-left: 10rem;
+    opacity: 0;
+    animation: info 3s forwards 6s 1;
+
+    .current, .freelancing, .specilization, .empowering, .enthusiastic, .from {
+      @include sedan-font;
+      color: $baseColor3;
+      padding-left: 1rem;
+      font-weight: 200;
+
+      .title {
+        color: $baseColor;
+      }
+    }
+  }
 }
 
 @include keyframes(first, (left: -40rem), (left: 15rem));
-@include keyframes(last, (left: 80rem), (left: 20rem));
+@include keyframes(last, (left: 80rem), (left: 18rem));
 @for $i from 6 through 1 {
   @include keyframes(img#{$i}, (left: -100rem + ($i * 2)), (left: 0rem));
+}
+@keyframes info {
+  0% {
+    opacity: 0;
+  } 100% {
+    opacity: 1;
+  }
 }
