@@ -24,8 +24,8 @@ export default function HeroSection() {
       },
       {
         opacity: 1,
-        delay: 5,
-        duration: 5,
+        delay: 3,
+        duration: 4,
         scrollTrigger: {
           trigger: name,
           top: 'top 80%'
