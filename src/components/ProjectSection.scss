@@ -4,60 +4,195 @@
 
 $fontWeight: 100;
 $baseColor: rgb(255, 255, 255);
-$baseColor2: rgb(255, 255, 255, .8);
-$baseColor3: rgb(255, 255, 255, .5);
+$baseColor2: rgb(255, 255, 255, 0.8);
+$baseColor3: rgb(255, 255, 255, 0.5);
+$darkColor: rgb(0, 0, 0);
 
 @mixin briem-font {
-  font-family: "Briem Hand", cursive;
+  font-family: 'Briem Hand', cursive;
   font-optical-sizing: auto;
   font-style: normal;
 }
 
 @mixin sedan-font {
-  font-family: "Sedan SC", serif;
+  font-family: 'Sedan SC', serif;
   font-optical-sizing: auto;
   font-style: normal;
 }
 
 @mixin noto-font {
-    font-family: "Noto Sans", sans-serif;
-    font-optical-sizing: auto;
-    font-style: normal;
+  font-family: 'Noto Sans', sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
 }
 
 .project {
-    margin-top: 10rem;
-    margin-left: 6rem;
-    margin-right: 10rem;
+  margin-top: 10rem;
+  margin-left: 6rem;
+  margin-right: 10rem;
 
-    .heading {
-        @include sedan-font;
+  .heading {
+    @include sedan-font;
+    color: $baseColor;
+    font-weight: $fontWeight + 400;
+    font-size: 4rem;
+    padding-right: 5rem;
+  }
+
+  .project-info {
+    display: flex;
+    gap: 6rem;
+    justify-content: center;
+    align-items: center;
+
+    .projects,
+    .major,
+    .minor {
+      @include noto-font;
+
+      .number {
         color: $baseColor;
         font-weight: $fontWeight + 400;
-        font-size: 4rem;
-        padding-right: 5rem;
+        font-size: 10rem;
+      }
+
+      .heading {
+        color: $baseColor3;
+        font-weight: $fontWeight + 200;
+        font-size: 1.2rem;
+      }
+    }
+  }
+
+  .showcase {
+    margin-top: 5rem;
+
+    .heading {
+      @include sedan-font;
+      color: $baseColor;
+      font-weight: $fontWeight + 400;
+      font-size: 5rem;
+      margin-bottom: 3rem;
     }
 
-    .project-info {
+    .cards {
       display: flex;
-      gap: 6rem;
       justify-content: center;
-      align-items: center;
+      gap: 3rem;
 
-      .projects, .major, .minor {
-        @include noto-font;
+      .p1,
+      .p2,
+      .p3 {
+        position: relative;
+        width: 25vw;
+        height: 70vh;
 
-        .number {
-          color: $baseColor;
-          font-weight: $fontWeight+400;
-          font-size: 10rem;
+        img {
+          width: 25vw;
+          height: 70vh;
+          object-fit: cover;
+          border-radius: 10px;
+          animation: imageHover 0.5s ease-in-out forwards;
         }
 
-        .heading {
-          color: $baseColor3;
-          font-weight: $fontWeight+200;
-          font-size: 1.2rem;
+        .over-head {
+          @include sedan-font;
+          color: $darkColor;
+          font-weight: $fontWeight + 300;
+          font-size: 2rem;
+          position: absolute;
+          top: 0;
+          z-index: 100;
+          animation: overheadHover 0.5s ease-in-out forwards;
+        }
+
+        .hidden-quotes {
+          @include noto-font;
+          color: $baseColor;
+          font-weight: $fontWeight + 200;
+          font-size: 2rem;
+          position: absolute;
+          top: 15rem;
+          z-index: 100;
+          opacity: 0;
+          animation: quoteHover 0.5s ease-in-out forwards;
+        }
+
+        &:hover {
+          img {
+            animation: imageHoverReverse 0.5s ease-in-out forwards;
+            cursor: pointer;
+          }
+
+          .over-head {
+            animation: overheadHoverReverse 0.5s ease-in-out forwards;
+            cursor: pointer;
+          }
+
+          .hidden-quotes {
+            animation: quoteHoverReverse 0.5s ease-in-out forwards;
+            cursor: pointer;
+          }
         }
       }
     }
+  }
+}
+
+@keyframes imageHover {
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  0% {
+    transform: scale(1.15);
+    opacity: 0.3;
+  }
+}
+
+@keyframes imageHoverReverse {
+  100% {
+    transform: scale(1.2);
+    opacity: 0.3;
+  }
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes overheadHover {
+  100% {
+    color: $darkColor;
+  }
+  0% {
+    color: $baseColor;
+  }
+}
+
+@keyframes overheadHoverReverse {
+  100% {
+    color: $baseColor;
+  }
+  0% {
+    color: $darkColor;
+  }
+}
+
+@keyframes quoteHover {
+  100% {
+    opacity: 0;
+  }
+  0% {
+    opacity: 1;
+  }
+}
+
+@keyframes quoteHoverReverse {
+  100% {
+    opacity: 1;
+  }
+  0% {
+    opacity: 0;
+  }
 }

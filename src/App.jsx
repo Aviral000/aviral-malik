@@ -8,7 +8,7 @@ export default function App() {
     <div>
       <Router>
         <Routes>
-            <Route default exact path='/aviral-malik' element={<Home />} />
+            <Route exact path='/aviral-malik' element={<Home />} />
         </Routes>
       </Router>
     </div>
