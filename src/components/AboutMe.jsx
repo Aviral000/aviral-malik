@@ -8,10 +8,12 @@ gsap.registerPlugin(ScrollTrigger);
 export default function AboutMe() {
   const oddParaRefs = useRef([]);
   const evenParaRefs = useRef([]);
+  const headingRef = useRef(null);
 
   useLayoutEffect(() => {
     const oddParas = oddParaRefs.current;
     const evenParas = evenParaRefs.current;
+    const heading = headingRef.current;
 
     oddParas.forEach((para, index) => {
       gsap.fromTo(
@@ -50,6 +52,22 @@ export default function AboutMe() {
         }
       );
     });
+
+    gsap.fromTo(
+      heading,
+      {
+        opacity: 0,
+      },
+      {
+        opacity: 1,
+        duration: 4,
+        scrollTrigger: {
+          trigger: heading,
+          start: 'top 80%'
+        }
+      }
+    )
+    
   }, []);
 
   const addToRefs = (el, isOdd) => {
@@ -62,6 +80,7 @@ export default function AboutMe() {
 
   return (
     <div className="about-me">
+      <h1 className="heading" ref={headingRef}>A Glimpse into My Journey</h1>
       <div className="para">
         <ol>
           <li

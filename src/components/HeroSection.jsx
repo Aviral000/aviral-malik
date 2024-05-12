@@ -1,4 +1,6 @@
-import React from 'react'
+import React, { useLayoutEffect, useRef } from 'react'
+import gsap from 'gsap'
+import ScrollTrigger from 'gsap/ScrollTrigger'
 import "./HeroSection.scss"
 import pic1 from "../assests/personal pics/IMG_9138.jpg"
 import pic2 from "../assests/personal pics/IMG_8859.jpg"
@@ -7,7 +9,31 @@ import pic4 from "../assests/personal pics/IMG_1670.jpg"
 import pic5 from "../assests/personal pics/IMG_9070.JPG"
 import pic6 from "../assests/personal pics/IMG_8866.jpg"
 
+gsap.registerPlugin(ScrollTrigger);
+
 export default function HeroSection() {
+  const nameRef = useRef(null);
+
+  useLayoutEffect(() => {
+    const name = nameRef.current;
+
+    gsap.fromTo(
+      name,
+      {
+        opacity: 0,
+      },
+      {
+        opacity: 1,
+        delay: 5,
+        duration: 5,
+        scrollTrigger: {
+          trigger: name,
+          top: 'top 80%'
+        }
+      }
+    )
+  }, [])
+
   return (
     <div className='hero-section'>
       <div className='pics-collection'>
@@ -18,7 +44,7 @@ export default function HeroSection() {
         <img src={pic5} alt="pic5" className='img5' />
         <img src={pic6} alt="pic6" className='img6' />
       </div>
-      <div className='name'>
+      <div className='name' ref={nameRef}>
         <div className='first'>Aviral</div>
         <div className='last'>Malik</div>
       </div>

@@ -3,25 +3,33 @@
 
 $fontWeight: 100;
 $baseColor: rgb(255, 255, 255);
-$baseColor2: rgb(255, 255, 255, .8);
-$baseColor3: rgb(255, 255, 255, .5);
+$baseColor2: rgb(255, 255, 255, 0.8);
+$baseColor3: rgb(255, 255, 255, 0.5);
 
 @mixin briem-font {
-  font-family: "Briem Hand", cursive;
+  font-family: 'Briem Hand', cursive;
   font-optical-sizing: auto;
   font-style: normal;
 }
 
 @mixin sedan-font {
-  font-family: "Sedan SC", serif;
+  font-family: 'Sedan SC', serif;
   font-optical-sizing: auto;
   font-style: normal;
 }
 
 @mixin keyframes($name, $from, $to) {
   @keyframes #{$name} {
-    0% { @each $prop, $value in $from { #{$prop}: #{$value}; } }
-    100% { @each $prop, $value in $to { #{$prop}: #{$value}; } }
+    0% {
+      @each $prop, $value in $from {
+        #{$prop}: #{$value};
+      }
+    }
+    100% {
+      @each $prop, $value in $to {
+        #{$prop}: #{$value};
+      }
+    }
   }
 }
 
@@ -53,7 +61,7 @@ $baseColor3: rgb(255, 255, 255, .5);
     @for $i from 6 through 1 {
       .img#{$i} {
         position: relative;
-        left: -100rem + ($i * 2);
+        right: -100rem + ($i * 2);
         animation: img#{$i} 1s forwards 6s - ($i - 1) 1;
       }
     }
@@ -63,28 +71,16 @@ $baseColor3: rgb(255, 255, 255, .5);
     display: flex;
     position: relative;
     top: -2rem;
+    padding-left: 10rem;
 
-    .first, .last {
+    .first,
+    .last {
       @include briem-font;
       color: $baseColor;
       font-weight: $fontWeight + 300;
       font-size: 10rem;
       letter-spacing: 10px;
-      position: relative;
-      animation-duration: 3s;
-      animation-fill-mode: forwards;
-    }
-
-    .first {
-      left: -40rem;
-      animation-name: first;
-      animation-delay: 4s;
-    }
-
-    .last {
-      left: 80rem;
-      animation-name: last;
-      animation-delay: 4s;
+      padding-left: 5rem;
     }
   }
 
@@ -94,7 +90,12 @@ $baseColor3: rgb(255, 255, 255, .5);
     opacity: 0;
     animation: info 3s forwards 6s 1;
 
-    .current, .freelancing, .specilization, .empowering, .enthusiastic, .from {
+    .current,
+    .freelancing,
+    .specilization,
+    .empowering,
+    .enthusiastic,
+    .from {
       @include sedan-font;
       color: $baseColor3;
       padding-left: 1rem;
@@ -107,15 +108,15 @@ $baseColor3: rgb(255, 255, 255, .5);
   }
 }
 
-@include keyframes(first, (left: -40rem), (left: 15rem));
-@include keyframes(last, (left: 80rem), (left: 18rem));
 @for $i from 6 through 1 {
-  @include keyframes(img#{$i}, (left: -100rem + ($i * 2)), (left: 0rem));
+  @include keyframes(img#{$i}, (right: -100rem + ($i * 2)), (right: 0rem));
 }
+
 @keyframes info {
   0% {
     opacity: 0;
-  } 100% {
+  }
+  100% {
     opacity: 1;
   }
 }

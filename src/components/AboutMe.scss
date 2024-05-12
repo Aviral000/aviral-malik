@@ -30,6 +30,15 @@ $baseColor3: rgb(255, 255, 255, .5);
     padding-left: 10rem;
     padding-right: 10rem;
 
+    .heading {
+        @include briem-font;
+        display: flex;
+        justify-content: center;
+        color: $baseColor;
+        font-weight: $fontWeight+400;
+        font-size: 4rem
+    }
+
     .para {
         @include noto-font;
         color: $baseColor2;
