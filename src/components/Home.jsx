@@ -4,6 +4,7 @@ import "./Home.scss"
 import HeroSection from './HeroSection'
 import AboutMe from './AboutMe'
 import ProjectSection from './ProjectSection'
+import ExperienceSection from './ExperienceSection'
 
 export default function Home() {
   return (
@@ -12,6 +13,7 @@ export default function Home() {
       <HeroSection />
       <AboutMe />
       <ProjectSection />
+      <ExperienceSection />
     </div>
   )
 }
