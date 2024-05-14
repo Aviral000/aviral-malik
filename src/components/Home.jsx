@@ -5,6 +5,7 @@ import HeroSection from './HeroSection'
 import AboutMe from './AboutMe'
 import ProjectSection from './ProjectSection'
 import ExperienceSection from './ExperienceSection'
+import SkillSection from './SkillSection'
 
 export default function Home() {
   return (
@@ -14,6 +15,7 @@ export default function Home() {
       <AboutMe />
       <ProjectSection />
       <ExperienceSection />
+      <SkillSection />
     </div>
   )
 }

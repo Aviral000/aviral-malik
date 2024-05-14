@@ -1,0 +1,53 @@
+@import url('https://fonts.googleapis.com/css2?family=Briem+Hand:wght@100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Sedan+SC&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap');
+
+$fontWeight: 100;
+$baseColor: rgb(255, 255, 255);
+$baseColor2: rgb(255, 255, 255, 0.8);
+$baseColor3: rgb(255, 255, 255, 0.5);
+$darkColor: rgb(0, 0, 0);
+
+@mixin briem-font {
+  font-family: 'Briem Hand', cursive;
+  font-optical-sizing: auto;
+  font-style: normal;
+}
+
+@mixin sedan-font {
+  font-family: 'Sedan SC', serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+}
+
+@mixin noto-font {
+  font-family: 'Noto Sans', sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+}
+
+.skills-container {
+    margin-top: 10rem;
+    
+    .heading {
+        @include sedan-font;
+        color: $baseColor;
+        font-weight: $fontWeight + 300;
+        font-size: 4rem;
+        margin-left: 5rem;
+        margin-right: 10rem;
+    }
+
+    .frontend {
+      display: flex;
+      gap: 5rem;
+      align-items: center;
+      @include sedan-font;
+      color: $baseColor;
+      font-weight: $fontWeight + 300;
+      font-size: 2rem;
+      margin-left: 5rem;
+      margin-right: 10rem;
+      margin-top: 4rem;
+    }
+}
