@@ -39,13 +39,103 @@ $darkColor: rgb(0, 0, 0);
     }
 
     .frontend {
-      display: flex;
-      gap: 5rem;
-      align-items: center;
-      @include sedan-font;
+      @include noto-font;
       color: $baseColor;
       font-weight: $fontWeight + 300;
-      font-size: 2rem;
+      margin-left: 5rem;
+      margin-right: 10rem;
+      margin-top: 4rem;
+
+      .head-f {
+        font-size: 3rem;
+        color: $baseColor2;
+      }
+
+      .sub-f {
+        display: flex;
+        align-items: center;
+        gap: 10rem;
+        margin-top: 1.2rem;
+        font-size: 2.2rem;
+        color: $baseColor3;
+
+        img {
+          margin-left: 1rem;
+          width: 3rem;
+          height: 3rem;
+          object-fit: cover;
+          border-radius: 50%;
+        }
+      }
+    }
+
+    .backend {
+      @include noto-font;
+      color: $baseColor;
+      font-weight: $fontWeight + 300;
+      margin-left: 5rem;
+      margin-right: 10rem;
+      margin-top: 4rem;
+
+      .head-b {
+        font-size: 3rem;
+        color: $baseColor2;
+      }
+
+      .sub-b {
+        display: flex;
+        align-items: center;
+        gap: 9rem;
+        margin-top: 1.2rem;
+        font-size: 2.2rem;
+        white-space: nowrap;
+        color: $baseColor3;
+
+        img {
+          margin-left: 1rem;
+          width: 3rem;
+          height: 3rem;
+          object-fit: cover;
+          border-radius: 50%;
+        }
+      }
+    }
+
+    .database {
+      @include noto-font;
+      color: $baseColor;
+      font-weight: $fontWeight + 300;
+      margin-left: 5rem;
+      margin-right: 10rem;
+      margin-top: 4rem;
+
+      .head-db {
+        font-size: 3rem;
+        color: $baseColor2;
+      }
+
+      .sub-db {
+        display: flex;
+        align-items: center;
+        gap: 10rem;
+        margin-top: 1.2rem;
+        font-size: 2.2rem;
+        color: $baseColor3;
+      }
+
+      img {
+        margin-left: 1rem;
+        width: 3rem;
+        height: 3rem;
+        object-fit: cover;
+        border-radius: 50%;
+      }
+    }
+
+    .other-skills {
+      @include noto-font;
+      color: $baseColor;
+      font-weight: $fontWeight + 500;
       margin-left: 5rem;
       margin-right: 10rem;
       margin-top: 4rem;
