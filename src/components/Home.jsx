@@ -6,6 +6,7 @@ import AboutMe from './AboutMe'
 import ProjectSection from './ProjectSection'
 import ExperienceSection from './ExperienceSection'
 import SkillSection from './SkillSection'
+import FAQ from './FAQ'
 
 export default function Home() {
   return (
@@ -16,6 +17,7 @@ export default function Home() {
       <ProjectSection />
       <ExperienceSection />
       <SkillSection />
+      <FAQ />
     </div>
   )
 }

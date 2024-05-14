@@ -7,6 +7,7 @@ $baseColor: rgb(255, 255, 255);
 $baseColor2: rgb(255, 255, 255, 0.8);
 $baseColor3: rgb(255, 255, 255, 0.5);
 $darkColor: rgb(0, 0, 0);
+$accentColor: rgb(20, 20, 20);
 
 @mixin briem-font {
   font-family: 'Briem Hand', cursive;
@@ -26,3 +27,53 @@ $darkColor: rgb(0, 0, 0);
   font-style: normal;
 }
 
+.FAQ-container {
+  margin-top: 10rem;
+  margin-right: 5rem;
+  margin-left: 5rem;
+
+  .heading-FAQ {
+    @include sedan-font;
+    color: $baseColor;
+    font-weight: $fontWeight + 400;
+    font-size: 5rem;
+  }
+
+  .accordion {
+    display: flex;
+
+    .left {
+      width: 50%;
+      padding: 1rem;
+
+      .heading-left {
+        @include sedan-font;
+        color: $baseColor;
+        font-weight: $fontWeight + 300;
+        font-size: 1.5rem;
+      }
+    }
+
+    .right {
+      width: 50%;
+      padding: 1rem;
+
+      .MuiAccordion-root {
+        background-color: $accentColor;
+        color: $baseColor;
+
+        .MuiAccordionSummary-root {
+          color: $baseColor;
+
+          .MuiAccordionSummary-expandIconWrapper {
+            color: $baseColor;
+          }
+        }
+
+        .MuiAccordionDetails-root {
+            color: $baseColor2;
+        }
+      }
+    }
+  }
+}
