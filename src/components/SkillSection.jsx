@@ -35,10 +35,12 @@ useLayoutEffect(() => {
     gsap.fromTo(
       frontend,
       {
-        y: '100%'
+        y: '100%',
+        opacity: 0
       },
       {
         y: '0%',
+        opacity: 1,
         duration: 1,
         scrollTrigger: {
           trigger: frontend,
@@ -50,10 +52,12 @@ useLayoutEffect(() => {
     gsap.fromTo(
       backend,
       {
-        y: '100%'
+        y: '100%',
+        opacity: 0
       },
       {
         y: '0%',
+        opacity: 1,
         duration: 1,
         scrollTrigger: {
           trigger: backend,
@@ -65,10 +69,12 @@ useLayoutEffect(() => {
     gsap.fromTo(
       database,
       {
-        y: '100%'
+        y: '100%',
+        opacity: 0
       },
       {
         y: '0%',
+        opacity: 1,
         duration: 1,
         scrollTrigger: {
           trigger: database,
