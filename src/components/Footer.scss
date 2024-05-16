@@ -92,12 +92,18 @@ $accentColor: rgb(20, 20, 20);
 
 .footer-distributed .footer-center{
 	width: 35%;
+
+	img {
+		width: 2rem;
+		height: 2rem;
+		object-fit: cover;
+	}
 }
 
 .footer-distributed .footer-center p{
 	display: inline-block;
 	color: #ffffff;
-  font-weight:400;
+	font-weight:400;
 	vertical-align: middle;
 	margin:0;
 }

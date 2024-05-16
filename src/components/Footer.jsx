@@ -23,16 +23,16 @@ export default function Footer() {
                 <p class="footer-company-name">Aviral Malik © 2024</p>
             </div>
             <div class="footer-center">
-                <div>
-                    <i class="fa fa-map-marker"></i>
+                <div style={{ display: 'flex', alignItems: 'center', gap: '5px' }}>
+                    <img src="https://icon-library.com/images/google-maps-icon-transparent/google-maps-icon-transparent-0.jpg" alt="" />
                     <p><span>Vasundhara Residency</span> MZN, Uttar Pradesh</p>
                 </div>
-                <div>
-                    <i class="fa fa-phone"></i>
+                <div style={{ display: 'flex', alignItems: 'center', gap: '5px', marginTop: '1rem' }}>
+                    <img src="https://th.bing.com/th/id/OIP.qa3iyh9yr7worCA85I2UZwHaHw?rs=1&pid=ImgDetMain" alt="" />
                     <p>+91 9528410057</p>
                 </div>
-                <div>
-                    <i class="fa fa-envelope"></i>
+                <div style={{ display: 'flex', alignItems: 'center', gap: '5px', marginTop: '1rem' }}>
+                    <img src="https://purepng.com/public/uploads/large/purepng.com-mail-iconsymbolsiconsapple-iosiosios-8-iconsios-8-721522596075clftr.png" alt="" />
                     <p><a href="mailto:avimalik02@gmail.com">avimalik02@gmail.com</a></p>
                 </div>
             </div>
