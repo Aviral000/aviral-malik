@@ -71,7 +71,9 @@ $baseColor3: rgb(255, 255, 255, 0.5);
     display: flex;
     position: relative;
     top: -2rem;
-    padding-left: 10rem;
+    padding-left: 13vw;
+    gap: 5%;
+
 
     .first,
     .last {
@@ -80,7 +82,6 @@ $baseColor3: rgb(255, 255, 255, 0.5);
       font-weight: $fontWeight + 300;
       font-size: 10rem;
       letter-spacing: 10px;
-      padding-left: 5rem;
     }
   }
 
@@ -119,4 +120,29 @@ $baseColor3: rgb(255, 255, 255, 0.5);
   100% {
     opacity: 1;
   }
+}
+
+.swiper-carousel-animate-opacity {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+
+  img {
+    width: 50vw;
+    height: 45vh;
+    object-fit: cover;
+  }
+}
+
+// .swiper {
+// }
+
+// .swiper-slide {
+// }
+
+.swiper-slide-prev,
+.swiper-slide-next,
+.swiper-slide-active {
+  padding: 1rem;
 }

@@ -13,6 +13,7 @@ gsap.registerPlugin(ScrollTrigger);
 
 export default function FAQ() {
 const FAQRef = useRef(null);
+console.log(`Screen Width: ${window.screen.width}`);
 
 useLayoutEffect(() => {
     const FAQ = FAQRef.current;

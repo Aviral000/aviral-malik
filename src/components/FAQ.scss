@@ -29,12 +29,12 @@ $accentColor: rgb(20, 20, 20);
 
 .FAQ-container {
   margin-top: 10rem;
-  margin-right: 5rem;
-  margin-left: 5rem;
+  margin-right: 5%;
+  margin-left: 5%;
 
   .heading-FAQ {
     @include sedan-font;
-    color: $baseColor;
+    color: #AFEEEE;
     font-weight: $fontWeight + 400;
     font-size: 5rem;
   }
@@ -43,19 +43,19 @@ $accentColor: rgb(20, 20, 20);
     display: flex;
 
     .left {
-      width: 50%;
+      width: 40vw;
       padding: 1rem;
 
       .heading-left {
         @include sedan-font;
-        color: $baseColor;
+        color: #E6E6FA;
         font-weight: $fontWeight + 300;
         font-size: 1.5rem;
       }
     }
 
     .right {
-      width: 50%;
+      width: 40vw;
       padding: 1rem;
 
       .MuiAccordion-root {
@@ -63,7 +63,9 @@ $accentColor: rgb(20, 20, 20);
         color: $baseColor;
 
         .MuiAccordionSummary-root {
-          color: $baseColor;
+          color: #B0C4DE;
+          font-size: 1.1rem;
+          font-weight: 600;
 
           .MuiAccordionSummary-expandIconWrapper {
             color: $baseColor;
@@ -71,7 +73,7 @@ $accentColor: rgb(20, 20, 20);
         }
 
         .MuiAccordionDetails-root {
-            color: $baseColor2;
+            color: $baseColor3;
         }
       }
     }
