@@ -22,7 +22,7 @@ const Carousel = () => {
       modules={[Navigation, Pagination, Autoplay]}
       slidesPerView={2}
       // navigation
-      pagination={{ clickable: true }}
+      // pagination={{ clickable: true }}
       autoplay={{ delay: 4000 }}
       loop={true}
     >

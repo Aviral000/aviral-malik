@@ -1,0 +1,166 @@
+@import url('https://fonts.googleapis.com/css2?family=Briem+Hand:wght@100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Sedan+SC&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap');
+
+$fontWeight: 100;
+$baseColor: rgb(255, 255, 255);
+$baseColor2: rgb(255, 255, 255, 0.8);
+$baseColor3: rgb(255, 255, 255, 0.5);
+$darkColor: rgb(0, 0, 0);
+$accentColor: rgb(20, 20, 20);
+
+@mixin briem-font {
+  font-family: 'Briem Hand', cursive;
+  font-optical-sizing: auto;
+  font-style: normal;
+}
+
+@mixin sedan-font {
+  font-family: 'Sedan SC', serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+}
+
+@mixin noto-font {
+  font-family: 'Noto Sans', sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+}
+
+.footer-container {
+    margin-top: 5rem;
+}
+
+.footer-distributed{
+	background: $darkColor;
+	box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.12);
+	box-sizing: border-box;
+	width: 100%;
+	text-align: left;
+	font: bold 16px sans-serif;
+	padding: 55px 50px;
+}
+
+.footer-distributed .footer-left,
+.footer-distributed .footer-center,
+.footer-distributed .footer-right{
+	display: inline-block;
+	vertical-align: top;
+}
+
+.footer-distributed .footer-left{
+    @include sedan-font;
+	width: 40%;
+
+    img {
+        width: 4rem;
+        height: 4rem;
+        object-fit: cover
+    }
+}
+
+.footer-distributed h3{
+    @include sedan-font;
+	color:  #ffffff;
+	margin: 0;
+}
+
+.footer-distributed h3 span{
+	color:  lightseagreen;
+}
+
+.footer-distributed .footer-links{
+	color:  #ffffff;
+	margin: 20px 0 12px;
+	padding: 0;
+}
+
+.footer-distributed .footer-links a{
+	display:inline-block;
+	line-height: 1.8;
+    font-weight:400;
+	text-decoration: none;
+	color:  inherit;
+}
+
+.footer-distributed .footer-company-name{
+	color:  $baseColor3;
+	font-size: 14px;
+	font-weight: normal;
+	margin: 0;
+}
+
+.footer-distributed .footer-center{
+	width: 35%;
+}
+
+.footer-distributed .footer-center p{
+	display: inline-block;
+	color: #ffffff;
+  font-weight:400;
+	vertical-align: middle;
+	margin:0;
+}
+
+.footer-distributed .footer-center p span{
+	display:block;
+	font-weight: normal;
+	font-size:14px;
+	line-height:2;
+}
+
+.footer-distributed .footer-center p a{
+	color:  lightseagreen;
+	text-decoration: none;;
+}
+
+.footer-distributed .footer-right{
+	width: 20%;
+}
+
+.footer-distributed .footer-company-about {
+    @include noto-font;
+    color: $baseColor3;
+    font-size: .6rem;
+    span {
+        display: block;
+        color:  #ffffff;
+        font-size: 14px;
+        font-weight: bold;
+        margin-bottom: 20px;
+    }
+}
+
+.footer-distributed .footer-icons{
+	margin-top: 25px;
+	a {
+		padding: 5px;
+	}
+	img {
+		width: 2.5rem;
+		height: 2.5rem;
+		object-fit: cover;
+		border-radius: 50%;
+	}
+}
+
+@media (max-width: 880px) {
+
+	.footer-distributed{
+		font: bold 14px sans-serif;
+	}
+
+	.footer-distributed .footer-left,
+	.footer-distributed .footer-center,
+	.footer-distributed .footer-right{
+		display: block;
+		width: 100%;
+		margin-bottom: 40px;
+		text-align: center;
+	}
+
+	.footer-distributed .footer-center i{
+		margin-left: 0;
+	}
+
+}
